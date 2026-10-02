@@ -8,28 +8,26 @@ export default {
   theme: {
     extend: {
       colors: {
+        pastel: {
+          lavender: '#c084fc',
+          purple: '#a855f7',
+          mint: '#6ee7b7',
+          emerald: '#34d399',
+          sky: '#38bdf8',
+          blue: '#60a5fa',
+          rose: '#f472b6',
+          pink: '#ec4899',
+          peach: '#f97316',
+          indigo: '#818cf8',
+        },
         charcoal: {
-          950: '#080809',
-          900: '#0f0f11',
-          850: '#151518',
-          800: '#1b1b20',
-          700: '#282830',
-          600: '#3f3f4a',
+          950: '#08090e',
+          900: '#0f111a',
+          850: '#151824',
+          800: '#1b1f2e',
+          700: '#282d40',
+          600: '#3f4660',
         },
-        gold: {
-          300: '#fde68a',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-        },
-        brand: {
-          orange: '#ff6b35',
-          gold: '#eab308',
-          blue: '#3b82f6',
-          purple: '#8b5cf6',
-          emerald: '#10b981',
-        }
       },
       fontFamily: {
         serif: ['Cinzel', 'Playfair Display', 'Georgia', 'serif'],

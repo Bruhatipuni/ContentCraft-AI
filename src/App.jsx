@@ -18,13 +18,12 @@ import { VariationsStudio } from './components/VariationsStudio';
 import { ContentCalendar } from './components/ContentCalendar';
 import { FeedbackLoopStudio } from './components/FeedbackLoopStudio';
 import { MultilingualStudio } from './components/MultilingualStudio';
-import { ApiKeyModal } from './components/ApiKeyModal';
 import { NewBrandModal } from './components/NewBrandModal';
 
 import { storageService } from './services/storageService';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState('all-in-one'); // Defaults to the easy-to-use 1-click studio
+  const [activeTab, setActiveTab] = useState('all-in-one'); // Defaults to 1-click studio
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   
   // Theme State: 'light' or 'dark'
@@ -42,7 +41,6 @@ export function App() {
   const [repurposerSeedContent, setRepurposerSeedContent] = useState('');
 
   // Modals
-  const [isApiKeyModalOpen, setIsApiKeyModalOpen] = useState(false);
   const [isNewBrandModalOpen, setIsNewBrandModalOpen] = useState(false);
   const [scoreModalState, setScoreModalState] = useState({
     isOpen: false,
@@ -133,9 +131,9 @@ export function App() {
   };
 
   const tabTitles = {
-    'overview': 'Dashboard & KPIs',
-    'all-in-one': '1-Click Campaign Studio (Easy Mode)',
-    'repurposer': 'Content Repurposer (5-in-1)',
+    'overview': 'Dashboard & Metrics',
+    'all-in-one': '1-Click Campaign Studio',
+    'repurposer': 'Content Repurposer',
     'visuals': 'Visual & Ad Creative Studio',
     'video-reel': 'Video & Reel Storyboard',
     'voiceover': 'AI Voiceover Synthesizer',
@@ -144,7 +142,7 @@ export function App() {
     'brand-assets': 'Brand Voice & Guidelines',
     'variations': 'A/B Angle Generator',
     'calendar': 'Publishing Calendar',
-    'feedback-loop': 'AI Reach Simulator & Memory Loop',
+    'feedback-loop': 'AI Reach Simulator',
     'multilingual': 'Indic Multilingual Studio'
   };
 
@@ -153,14 +151,14 @@ export function App() {
   return (
     <div className={`min-h-screen flex font-sans transition-colors duration-200 ${
       isLight 
-        ? 'light-theme bg-[#f8fafc] text-slate-900 selection:bg-amber-500/20 selection:text-amber-800' 
-        : 'dark-theme bg-[#09090c] text-neutral-100 selection:bg-amber-500/30 selection:text-amber-200'
+        ? 'light-theme bg-[#f6f8fd] text-slate-900 selection:bg-purple-500/20 selection:text-purple-800' 
+        : 'dark-theme bg-[#0b0d14] text-neutral-100 selection:bg-purple-500/30 selection:text-purple-200'
     }`}>
       
       {/* Toast Notification */}
       {toastMessage && (
         <div className={`fixed bottom-6 right-6 z-50 flex items-center space-x-2 px-4 py-2.5 rounded-2xl shadow-2xl animate-in slide-in-from-bottom-5 border ${
-          isLight ? 'bg-white border-amber-300 text-slate-900' : 'bg-neutral-900 border-amber-500/50 text-neutral-100'
+          isLight ? 'bg-white border-purple-300 text-slate-900' : 'bg-neutral-900 border-purple-500/50 text-neutral-100'
         }`}>
           <CheckCircle className="w-4 h-4 text-emerald-500" />
           <span className="text-xs font-semibold">{toastMessage}</span>
@@ -173,7 +171,6 @@ export function App() {
         onNavigateTab={setActiveTab}
         activeBrand={activeBrand}
         onOpenNewBrandModal={() => setIsNewBrandModalOpen(true)}
-        onOpenApiKeyModal={() => setIsApiKeyModalOpen(true)}
         isMobileOpen={isMobileSidebarOpen}
         onCloseMobile={() => setIsMobileSidebarOpen(false)}
         themeMode={themeMode}
@@ -187,7 +184,6 @@ export function App() {
           activeBrand={activeBrand}
           brands={brands}
           onSelectBrand={handleSelectBrand}
-          onOpenApiKeyModal={() => setIsApiKeyModalOpen(true)}
           onOpenNewBrandModal={() => setIsNewBrandModalOpen(true)}
           onOpenMobileSidebar={() => setIsMobileSidebarOpen(true)}
           activeTabTitle={tabTitles[activeTab] || 'Studio'}
@@ -314,15 +310,11 @@ export function App() {
             <div className="flex items-center space-x-2">
               <span className={`serif-headline font-bold ${isLight ? 'text-slate-800' : 'text-neutral-200'}`}>ContentCraft AI</span>
               <span>·</span>
-              <span>BFWAI/HACK 26 Hackathon</span>
-              <span>·</span>
-              <span className="text-amber-500 font-semibold">Team AI Verse</span>
+              <span className="text-purple-400 font-semibold">AI Content Studio for Brands & Creators</span>
             </div>
 
             <div className="text-center sm:text-right text-[11px] opacity-80">
-              <span>Bruhati, Shashank, Dayakar</span>
-              <span className="mx-2">•</span>
-              <span>PS 02 AI Content Studio for Brands & Creators</span>
+              <span>All-in-One Multi-Format Content Orchestration</span>
             </div>
           </div>
         </footer>
@@ -330,11 +322,6 @@ export function App() {
       </div>
 
       {/* Global Modals */}
-      <ApiKeyModal
-        isOpen={isApiKeyModalOpen}
-        onClose={() => setIsApiKeyModalOpen(false)}
-      />
-
       <NewBrandModal
         isOpen={isNewBrandModalOpen}
         onClose={() => setIsNewBrandModalOpen(false)}

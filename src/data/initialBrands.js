@@ -6,10 +6,10 @@ export const initialBrands = [
     industry: 'D2C Beauty & Wellness',
     website: 'https://glowskinorganics.com',
     colors: {
-      primary: '#d97706',
-      secondary: '#059669',
-      accent: '#f59e0b',
-      background: '#0c0a09'
+      primary: '#c084fc',
+      secondary: '#34d399',
+      accent: '#f472b6',
+      background: '#0d0f19'
     },
     voice: {
       tone: 'Empathetic, Educative, Chic, and Science-Backed',
@@ -30,9 +30,9 @@ export const initialBrands = [
     industry: 'B2B SaaS / Developer Tools',
     website: 'https://devpulse.ai',
     colors: {
-      primary: '#3b82f6',
-      secondary: '#8b5cf6',
-      accent: '#06b6d4',
+      primary: '#38bdf8',
+      secondary: '#818cf8',
+      accent: '#6ee7b7',
       background: '#090d16'
     },
     voice: {
@@ -54,9 +54,9 @@ export const initialBrands = [
     industry: 'Fintech & Education',
     website: 'https://finlitbharat.in',
     colors: {
-      primary: '#10b981',
-      secondary: '#f59e0b',
-      accent: '#6366f1',
+      primary: '#34d399',
+      secondary: '#c084fc',
+      accent: '#818cf8',
       background: '#06140e'
     },
     voice: {
